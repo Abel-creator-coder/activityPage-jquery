@@ -1,0 +1,165 @@
+@import url('reset.css');
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.competition_show {
+    width: 100%;
+    background: url('../images/com_show_bg.png') no-repeat 0 0;
+    background-size: cover;
+    height: 7.4rem;
+    position: relative;
+    padding-top: 0.2rem;
+}
+
+.competition_show > p {
+    font-size: 12px;
+    padding-bottom: 0.14rem;
+    color: #50c7c1;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    top: 0.2rem;
+    padding-top: 0.14rem;
+    width: 4.5rem;
+    margin-left: -2.25rem;
+}
+
+.competition_show .competition_show_chart {
+    width: 5.97rem;
+    height: 5.97rem;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.competition_show .competition_show_chart img {
+    width: 299px;
+    height: 299px;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+#canvas {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+#canvas1 {
+    position: absolute;
+    z-index: 110;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.competition_show .competition_show_chart .competitiveness {
+    font-size: 12px;
+    font-weight: bold;
+    color: #a3dedd;
+    text-align: center;
+    padding-top: 1.37rem;
+}
+
+.competition_show .competition_show_chart .competitive_text {
+    font-size: 45px;
+    color: #fff;
+    padding-top: 0.2rem;
+    text-align: center;
+}
+
+.competition_show .competition_show_chart .rank {
+    font-size: 11px;
+    background-color: #74c8cb;
+    padding: 0.1rem 0.3rem;
+    display: inline-block;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 0.195rem;
+}
+
+.competition_show .competition_show_chart .evaluate_time {
+    font-size: 10px;
+    color: #92ced5;
+    text-align: center;
+    padding-top: 0.4rem;
+}
+
+.competition_show .work_card {
+    height: 2.47rem;
+    width: 94%;
+    margin-left: 3%;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -1.12rem;
+    box-shadow: 0px 5px 54px 0px #cfcece;
+}
+
+.competition_show .work_card .work_type {
+    margin: 0 0.36rem;
+    padding-top: 0.34rem;
+    overflow: hidden;
+}
+
+.competition_show .work_card .work_type span:first-child {
+    font-size: 1em;
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
+    float: left;
+    width: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.competition_show .work_card .work_type span:last-child {
+    color: red;
+    font-size: 16px;
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+
+.competition_show .work_card p {
+    font-size: 2em;
+    color: #797979;
+    margin-left: 0.36rem;
+    padding-top: 0.17rem;
+}
+
+.competition_show .work_card .tag {
+    margin-left: 0.36rem;
+    padding-top: 0.17rem;
+}
+
+.competition_show .work_card .tag span {
+    font-size: 13px;
+    color: #797979;
+    background-color: #ededed;
+    padding: 0.08rem 0.1rem;
+    display: inline-block;
+    margin-right: 0.2rem;
+    text-align: center;
+}
+
+#test1 {
+    -webkit-font-smoothing: antialiased;
+}

@@ -30,7 +30,7 @@ module.exports = {
             user: 'root',
             host: '113.209.11.221',
             ref: 'origin/master',
-            repo: 'git@github.com:lzq2016/test.git',
+            repo: 'https://github.com/lzq2016/test.git',
             path: '/var/local/server/www',
             'post-deploy': 'pm2 reload ecosystem.config.js --env production'
         }

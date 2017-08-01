@@ -12,7 +12,8 @@ module.exports = {
             watch: true,
             cwd: './',
             env: {
-                NODE_ENV: 'development'
+                // NODE_ENV: 'development',
+                COMMON_VARIABLE: "true"
             },
             env_production: {
                 NODE_ENV: 'production'
@@ -26,23 +27,23 @@ module.exports = {
      */
     deploy: {
         production: {
-            user: 'node',
-            host: '212.83.163.1',
+            user: 'root',
+            host: '113.209.11.221',
             ref: 'origin/master',
-            repo: 'git@github.com:repo.git',
-            path: '/var/www/production',
-            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
-        },
-        dev: {
-            user: 'node',
-            host: '212.83.163.1',
-            ref: 'origin/master',
-            repo: 'git@github.com:repo.git',
-            path: '/var/www/development',
-            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env dev',
-            env: {
-                NODE_ENV: 'dev'
-            }
+            repo: 'git@github.com:lzq2016/test.git',
+            path: '/var/local/server/www',
+            'post-deploy': 'pm2 reload ecosystem.config.js --env production'
         }
+        // dev: {
+        //     user: 'node',
+        //     host: '212.83.163.1',
+        //     ref: 'origin/master',
+        //     repo: 'git@github.com:repo.git',
+        //     path: '/var/www/development',
+        //     'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env dev',
+        //     env: {
+        //         NODE_ENV: 'dev'
+        //     }
+        // }
     }
 };

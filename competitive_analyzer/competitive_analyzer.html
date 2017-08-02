@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <title>竞争力分析器</title>
+    <script type="text/javascript">
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 750) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <script type="text/javascript">
+    _PAGE = {
+        data: {
+            "Job_Hot_Degree": [{
+                "name": "一般",
+                "count": 0,
+                "isCur": 1,
+                "factor": "Job_Hot_Min",
+                "rate": 0.0
+            }, {
+                "name": "中等",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Job_Hot_Medium",
+                "rate": 0.0
+            }, {
+                "name": "激烈",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Job_Hot_Max",
+                "rate": 0.0
+            }, {
+                "name": "火爆",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Job_Hot_SuperMax",
+                "rate": 100.0
+            }],
+            "Experience": [{
+                "name": "应届生",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Exp_Fresh",
+                "rate": 0.0
+            }, {
+                "name": "1年以内",
+                "count": 4,
+                "isCur": 1,
+                "factor": "Exp_Less_1",
+                "rate": 100.0
+            }, {
+                "name": "1-3年",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Exp_1_3",
+                "rate": 0.0
+            }, {
+                "name": "3-5年",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Exp_3_5",
+                "rate": 0.0
+            }, {
+                "name": "5-10年",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Exp_5_10",
+                "rate": 60
+            }, {
+                "name": "10年以上",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Exp_10_Plus",
+                "rate": 0.0
+            }],
+            "General_Market": [{
+                "name": "General_Market_Communication",
+                "count": 50,
+                "isCur": 0,
+                "factor": "General_Market_Communication",
+                "rate": 25.0
+            }, {
+                "name": "General_Market_Degree",
+                "count": 50,
+                "isCur": 0,
+                "factor": "General_Market_Degree",
+                "rate": 25.0
+            }, {
+                "name": "General_Market_CV_Match",
+                "count": 50,
+                "isCur": 0,
+                "factor": "General_Market_CV_Match",
+                "rate": 25.0
+            }, {
+                "name": "General_Market_Experience",
+                "count": 50,
+                "isCur": 0,
+                "factor": "General_Market_Experience",
+                "rate": 25.0
+            }],
+            "Degree": [{
+                "name": "高中及以下",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Degree_HighScool_And_Below",
+                "rate": 0.0
+            }, {
+                "name": "专科",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Degree_Junior",
+                "rate": 0.0
+            }, {
+                "name": "本科",
+                "count": 4,
+                "isCur": 1,
+                "factor": "Degree_Bachelor",
+                "rate": 100.0
+            }, {
+                "name": "硕士",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Degree_Master",
+                "rate": 0.0
+            }, {
+                "name": "博士",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Degree_Phd",
+                "rate": 0.0
+            }],
+            "General": [{
+                "name": "与该Boss沟通程度",
+                "count": 40,
+                "isCur": 0,
+                "factor": "General_Communication",
+                "rate": 26.7
+            }, {
+                "name": "学历",
+                "count": 80,
+                "isCur": 0,
+                "factor": "General_Degree",
+                "rate": 53.3
+            }, {
+                "name": "简历与该职位匹配度",
+                "count": 20,
+                "isCur": 0,
+                "factor": "General_CV_Match",
+                "rate": 13.3
+            }, {
+                "name": "工作经验",
+                "count": 10,
+                "isCur": 0,
+                "factor": "General_Experience",
+                "rate": 6.7
+            }],
+            "Communicate": [{
+                "name": "Boss未回复",
+                "count": 1,
+                "isCur": 1,
+                "factor": "Comm_Boss_Ignore",
+                "rate": 100
+            }, {
+                "name": "双方沟通中",
+                "count": 3,
+                "isCur": 0,
+                "factor": "Comm_Comm",
+                "rate": 0
+            }, {
+                "name": "已投递附件简历",
+                "count": -1,
+                "isCur": 0,
+                "factor": "Comm_Deliver",
+                "rate": 0.0
+            }, {
+                "name": "已交换联系方式",
+                "count": 1,
+                "isCur": 0,
+                "factor": "Comm_Exchange",
+                "rate": 0
+            }, {
+                "name": "已约面试",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Comm_Interview",
+                "rate": 0.0
+            }],
+            "Salary_Dynamic": [{
+                "name": "面议",
+                "count": 0,
+                "isCur": 1,
+                "factor": "Salary_NO",
+                "rate": 13
+            }, {
+                "name": "1-6k",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Salary_Min",
+                "rate": 0.0
+            }, {
+                "name": "6-13k",
+                "count": 1,
+                "isCur": 0,
+                "factor": "Salary_Medium",
+                "rate": 50.0
+            }, {
+                "name": "13-19k",
+                "count": 1,
+                "isCur": 0,
+                "factor": "Salary_Max",
+                "rate": 50.0
+            }, {
+                "name": "19k以上",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Salary_SuperMax",
+                "rate": 0.0
+            }],
+            "CVMatch": [{
+                "name": "低于30%",
+                "count": 4,
+                "isCur": 0,
+                "factor": "CV_30",
+                "rate": 0
+            }, {
+                "name": "30%-50%",
+                "count": 0,
+                "isCur": 1,
+                "factor": "CV_50",
+                "rate": 50
+            }, {
+                "name": "50%-80%",
+                "count": 0,
+                "isCur": 0,
+                "factor": "CV_80",
+                "rate": 0.0
+            }, {
+                "name": "80%以上",
+                "count": 0,
+                "isCur": 0,
+                "factor": "CV_80_Plus",
+                "rate": 0.0
+            }],
+            "Boss_Active": [{
+                "name": "不太活跃",
+                "count": 0,
+                "isCur": 1,
+                "factor": "Boss_Active_Min",
+                "rate": 0.0
+            }, {
+                "name": "比较活跃",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Boss_Active_Medium",
+                "rate": 0.0
+            }, {
+                "name": "活跃",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Boss_Active_Max",
+                "rate": 0.0
+            }, {
+                "name": "特别活跃",
+                "count": 0,
+                "isCur": 0,
+                "factor": "Boss_Active_SuperMax",
+                "rate": 100.0
+            }]
+        },
+        commNum: 4,
+        position: 2,
+        isFriend: false,
+        url: 'http://172.16.3.170:3000/competitive_analyzer'
+    }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/competitive_analyzer.css">
+</head>
+
+<body>
+    <div class="competition_show">
+        <p>使用成功！您还剩余N次使用机会</p>
+        <div class="competition_show_chart">
+            <img src="./images/com_show_chart.png">
+            <canvas id='canvas' width="299" height="299"></canvas>
+            <canvas id='canvas1' width="299" height="299"></canvas>
+            <p class="competitiveness">您的综合竞争力</p>
+            <p class="competitive_text">优秀</p>
+            <span class="rank">在100人中排名第20</span>
+            <p class="evaluate_time">评估时间：2016-06-23</p>
+        </div>
+        <div class="work_card" data-url="www.baidu.com">
+            <div class="work_type"><span>产品经理</span><span>15k-30k</span></div>
+            <p>今日头条</p>
+            <div class="tag"><span>济南市</span><span>3-5年</span><span>本科</span></div>
+        </div>
+        <div class="work_card_shadow"></div>
+    </div>
+    <div class="chart_title">
+        <img src="./images/com_title.png">
+        <div>
+            <p id="rank">个人综合竞争力：排名前20%</p>
+            <p>共100人沟通该职位,您排名第20</p>
+        </div>
+    </div>
+    <div id="container" style="width: 100%; height: 350px; margin: 0 auto"></div>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/contract.png">
+        <div>
+            <p id="contract">与Boss沟通情况：超过了1%的竞聘者</p>
+            <p>不试试怎么知道你不行？</p>
+        </div>
+    </div>
+    <div class="contaract_wrap h_31 mb_50 mt_82">
+        <span class="bar_title_one_row">已约面试</span>
+        <div class="hoz_bar">
+            <div class="bar_show" id="Comm_Interview">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="contaract_wrap mb_45 h_62">
+        <div class="bar_title_two_row">
+            <p>已交换</p>
+            <p>联系方式</p>
+        </div>
+        <div class="hoz_bar mt_16">
+            <div class="bar_show" id="Comm_Exchange">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="contaract_wrap mb_45 h_62">
+        <div class="bar_title_two_row">
+            <p>已投递</p>
+            <p>附件简历</p>
+        </div>
+        <div class="hoz_bar mt_16">
+            <div class="bar_show" id="Comm_Deliver">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="contaract_wrap mb_45 h_62">
+        <div class="bar_title_two_row">
+            <p>双方</p>
+            <p>沟通中</p>
+        </div>
+        <div class="hoz_bar mt_16">
+            <div class="bar_show" id="Comm_Comm">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="contaract_wrap h_31">
+        <span class="bar_title_one_row">Boss未回复</span>
+        <div class="hoz_bar">
+            <div class="bar_show" id="Comm_Boss_Ignore">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <img src="./images/contract_mark.jpg" class="contract_mark">
+    <a href="">
+        <img src="./images/start_chat.png" class="start_chat">
+    </a>
+    <div class="border mt_48"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/match_degree.png">
+        <div>
+            <div class="tip"><span>简历匹配度,是综合求职者在学历、工作经验、期望薪酬、技能等各方面条件与该职位要求的匹配程度计算得出的,数字越高代表越匹配。</span></div>
+            <p id="CVMatch">简历匹配度：低于30%</p>
+            <p>简历并不代表全部，告诉Boss你的态度与实力！</p>
+        </div>
+    </div>
+    <div class="match_wrap" data-height="4.23">
+        <img src="./images/match_mark.png" class="match_mark">
+        <div class="ver_bar match lf_10" id="CV_30"><span class="percent">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar match lf_20" id="CV_50"><span class="percent">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar match lf_30" id="CV_80"><span class="percent">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar match lf_40" id="CV_80_Plus"><span class="percent">50%</span><span class="here match">您在这里</span></div>
+    </div>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/qualifications.jpg">
+        <div>
+            <p id="Degree">学历情况：超过了20%的竞聘者</p>
+            <p>学历不占优，多展示你的经验、态度等软实力</p>
+        </div>
+    </div>
+    <div class="qua_wrap" data-height="4.23">
+        <img src="./images/qul_mark.png" class="qul_mark">
+        <div class="ver_bar qul lf_11" id="Degree_HighScool_And_Below"><span class="percent qul">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar qul lf_21" id="Degree_Junior"><span class="percent qul">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar qul lf_31" id="Degree_Bachelor"><span class="percent qul">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar qul lf_41" id="Degree_Master"><span class="percent qul">50%</span><span class="here match">您在这里</span></div>
+        <div class="ver_bar qul lf_51" id="Degree_Phd"><span class="percent qul">50%</span><span class="here match">您在这里</span></div>
+    </div>
+    <p class="btn center">该职位要求学历：本科</p>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/work_exp.jpg">
+        <div>
+            <p id="Experience">工作经验：超过了20%的竞聘者</p>
+            <p>工作经验不能代表全部，聊天中让Boss感受到你的与众不同</p>
+        </div>
+    </div>
+    <div class="work_exp_wrap mt_80 mb_60">
+        <span class="bar_title_one_row">应届生</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_Fresh">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="work_exp_wrap mb_60">
+        <span class="bar_title_one_row">1年以下</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_Less_1">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="work_exp_wrap mb_60">
+        <span class="bar_title_one_row">1-3年</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_1_3">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="work_exp_wrap mb_60">
+        <span class="bar_title_one_row">3-5年</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_3_5">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="work_exp_wrap mb_60">
+        <span class="bar_title_one_row">5-10年</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_5_10">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <div class="work_exp_wrap">
+        <span class="bar_title_one_row">10年以上</span>
+        <div class="hoz_bar">
+            <div class="bar_show work_exp" id="Exp_10_Plus">
+                <span class="percent">50%</span>
+                <span class="here work_exp">您在这里</span>
+            </div>
+        </div>
+    </div>
+    <img src="./images/contract_mark.jpg" class="contract_mark">
+    <p class="btn center">该职位要求工作经验：3-5年</p>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/salary.jpg">
+        <div>
+            <p id="Salary_Dynamic">期望薪酬：排名前15%</p>
+            <p>让Boss认可你的价值，才能匹配好的薪资</p>
+        </div>
+    </div>
+    <div class="sal_wrap" data-height="4.23">
+        <img src="./images/sul_mark.png" class="sul_mark">
+        <div class="ver_bar sal lf_11" id="Salary_NO"><span class="percent sal">50%</span><span class="here sal">您在这里</span></div>
+        <div class="ver_bar sal lf_21" id="Salary_Min"><span class="percent sal">50%</span><span class="here sal">您在这里</span></div>
+        <div class="ver_bar sal lf_31" id="Salary_Medium"><span class="percent sal">50%</span><span class="here sal">您在这里</span></div>
+        <div class="ver_bar sal lf_41" id="Salary_Max"><span class="percent sal">50%</span><span class="here sal">您在这里</span></div>
+        <div class="ver_bar sal lf_51" id="Salary_SuperMax"><span class="percent sal">50%</span><span class="here sal">您在这里</span></div>
+    </div>
+    <p class="btn center">该职位薪资范围：15-22k</p>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/active.jpg">
+        <div>
+            <p id="Boss_Active">Boss活跃情况：活跃</p>
+            <p>Boss对该职位的需求比较紧急，快去勾搭吧！</p>
+        </div>
+    </div>
+    <div class="peak_wrap">
+        <img src="./images/peak_purple.png" class="no_active" id="Boss_Active_Min">
+        <img src="./images/peak_purple.png" class="no_active" id="Boss_Active_Medium">
+        <img src="./images/peak_pink.png" class="active" id="Boss_Active_Max">
+        <img src="./images/peak_purple.png" class="no_active" id="Boss_Active_SuperMax">
+    </div>
+    <div class="peak_text_wrap">
+        <span>不太活跃</span>
+        <span>比较活跃</span>
+        <span>活跃</span>
+        <span>特别活跃</span>
+    </div>
+    <div class="border"></div>
+    <div class="chart_title mt_70">
+        <img src="./images/hot.png">
+        <div>
+            <p id="Job_Hot_Degree">职位热度：激烈</p>
+            <p>在一大波牛人到来之前，赶紧勾搭Boss，拿下这个职位！</p>
+        </div>
+    </div>
+    <div class="peak_wrap">
+        <img src="./images/peak_purple.png" class="no_active" id="Job_Hot_Min">
+        <img src="./images/peak_purple.png" class="no_active" id="Job_Hot_Medium">
+        <img src="./images/peak_pink.png" class="active" id="Job_Hot_Max">
+        <img src="./images/peak_purple.png" class="no_active" id="Job_Hot_SuperMax">
+    </div>
+    <div class="peak_text_wrap">
+        <span>一般</span>
+        <span>中等</span>
+        <span>激烈</span>
+        <span>火爆</span>
+    </div>
+    <div class="footer"></div>
+    <div class="sub_wrap">
+        <a href="">
+            <p class="sub">继续沟通</p>
+        </a>
+    </div>
+    <script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/lib/highcharts.js"></script>
+    <script type="text/javascript" src="./js/lib/highcharts-more.js"></script>
+    <script type="text/javascript" src="./js/lib/hidpi-canvas.js"></script>
+    <script type="text/javascript" src="./js/competitive_analyzer.js"></script>
+</body>
+
+</html>

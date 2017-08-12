@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 标题 -->
+    <title>相册</title>
+    <!-- 关键词 -->
+    <meta name="keywords" content="" />
+    <!-- 网站简介 -->
+    <meta name="description" content="" />
+    <!-- 自适应屏幕 -->
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- IE兼容 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/banner.css" rel="stylesheet" />
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- 最新 灯箱 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/rebox.css">
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body >
+    <!-- 顶部 -->
+    <div class="top">
+        <h4>活动剪影<a href=""><span class="iconfont">&#xe60e;</span></a></h4>  
+    </div>
+
+    <!-- 相册内容 -->
+    <div id="gallery" class="gallery">
+        <a href="images/banner3.jpg" ><img src="images/banner3.jpg" /></a>
+        <p>「興台光科技有限公司」積極投入綠色能源環保科技之研發，且專注於照明用電領域。擁有高端光學與光源的研發背景，致力整合最好的光源、安定器、燈具、結構設計，針對不同光源精準設算最佳光學效應，讓光源在高科技光學設計的運用上達到前所未能想像之境界。</p>
+        <a href="images/banner4.jpg" ><img src="images/banner4.jpg" /></a>
+        <p>研發出來的光學級HID節能燈可推廣至路燈道路照明、隧導照明、高桿燈照明、看板照明及球場照明等各種需要照明光源之場域，將光源的流明利用率發揮到光輸出極限，達到節能最大的效率、節約所有照明用電達百分之七十、甚至八十以上，將可極大幅度減低二氧化碳排放量。產品也為了可以邁向國際除了通過正修科技大學國家級實驗室TAF認證外，同時也符合國際RoHS環保設計規範。</p>
+        <p>未來公司除持續朝綠色先進製程目標發展外，更秉持提供無汙染之光源持續照耀大地。</p>
+        <a href="images/raise.png" ><img src="images/raise.png" /></a>
+        <p>本公司經過長期深入研究開發，研製出光學節能燈，開創了精密反射光學科技大量應用於民生照明的再次革命。就此創世紀的科技成果，更因地球環境惡化之際，立志為各節能减碳有識之士與各大能源管理商提供最佳光學節能產品，協助各合作方發展光學級節能燈具。</p>
+        <a href="images/banner3.jpg" ><img src="images/banner3.jpg" /></a>
+    </div>
+
+
+
+    <!-- 底部导航 -->
+    <div class="foot-nav clearfix footer-nav">
+        <a href="" class="active">
+            <div class="iconfont">&#xe604;</div>
+            首页
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe70b;</div>
+            活动
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe619;</div>
+            同修圈
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe66d;</div>
+            我的    
+        </a>
+    </div>
+
+    <!-- jQuery文件 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 灯箱js -->
+    <script  src="js/jquery-litelighter.js"></script>
+    <script  src="js/jquery-rebox.js"></script>
+    <script>
+        $('#gallery').rebox({ selector: 'a' })
+        .on('rebox:open', function(e, rx){ console.log(e.type, rx); })
+        .on('rebox:close', function(e, rx){ console.log(e.type, rx); })
+        .on('rebox:goto', function(e, rx, i, $item, $img){ console.log(e.type, rx, i, $item, $img); });
+    </script>
+</body>
+</html>

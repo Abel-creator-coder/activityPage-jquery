@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 标题 -->
+    <title>相册</title>
+    <!-- 关键词 -->
+    <meta name="keywords" content="" />
+    <!-- 网站简介 -->
+    <meta name="description" content="" />
+    <!-- 自适应屏幕 -->
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- IE兼容 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/banner.css" rel="stylesheet" />
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- 轮播图 CSS 文件 -->
+    <link rel="stylesheet" href="css/banner.css" type="text/css">
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body >
+    <!-- 顶部 -->
+    <div class="top">
+        <h4>相册<a href="index.html"><span class="iconfont">&#xe60e;</span></a></h4>  
+    </div>
+
+    <!-- 相册列表 -->
+    <div class="temple-intr-all">
+        <div id="lightbox_1">
+            <div class="wrapper">
+                <ul class="wall clearfix">
+                    <li class="article">
+                        <img src="images/banner2.jpg"  class="lightbox-pic" data-source="images/banner2.jpg">
+                    </li>
+                    <li class="article">
+                        <img src="images/banner3.jpg"  class="lightbox-pic"  data-source="images/banner3.jpg" >
+                    </li>
+                    <li class="article">
+                        <img src="images/banner4.jpg"  class="lightbox-pic"  data-source="images/banner4.jpg" >
+                    </li>
+                    <li class="article">
+                        <img src="images/img1.jpg"  class="lightbox-pic"  data-source="images/img1.jpg" >
+                    </li>
+                    <li class="article">
+                        <img src="images/img2.jpg"  class="lightbox-pic"  data-source="images/img2.jpg" >
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <div class="foot-nav clearfix footer-nav">
+        <a href="" class="active">
+            <div class="iconfont">&#xe604;</div>
+            首页
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe70b;</div>
+            活动
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe619;</div>
+            同修圈
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe66d;</div>
+            我的
+        </a>
+    </div>
+
+    <div id="lightbox_mask"></div>
+    <div id="lightbox_popup">
+        <div class="pic-view">
+            <img src="images/1-2.png" alt="#" class="pic">
+        </div>
+        <div class="btn-view">
+            <a href="#" class="btn btn-prev">←</a>
+            <a href="#" class="btn btn-next">→</a>
+            <a href="#" class="btn btn-close">×</a>
+        </div>
+    </div>
+
+    <!-- jQuery文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jaliswall.js"></script>
+    <script>
+        $(function(){
+            $('.wall').jaliswall({ item: '.article' });
+        });
+    </script>
+
+    <script src="js/lightbox.js"></script>
+    <script>
+        $(function () {
+            $('#lightbox_1').lightbox({
+                ifChange: true
+            });
+        });
+    </script>
+</body>
+</html>

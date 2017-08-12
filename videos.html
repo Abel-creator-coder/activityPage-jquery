@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 标题 -->
+    <title>视频</title>
+    <!-- 关键词 -->
+    <meta name="keywords" content="" />
+    <!-- 网站简介 -->
+    <meta name="description" content="" />
+    <!-- 自适应屏幕 -->
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- IE兼容 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/banner.css" rel="stylesheet" />
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- 轮播图 CSS 文件 -->
+    <link rel="stylesheet" href="css/banner.css" type="text/css">
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body >
+    <!-- 顶部 -->
+    <div class="top">
+        <h4>视频<a href="index.html"><span class="iconfont">&#xe60e;</span></a></h4>
+    </div>
+
+    <!-- 轮播图 -->
+    <div class="banner">
+        <div id="owl-banner" class="owl-carousel">
+            <div><a href=""><img src="images/banner1.jpg" alt=""></a></div>
+            <div><a href=""><img src="images/banner1.jpg" alt=""></a></div>
+            <div><a href=""><img src="images/banner1.jpg" alt=""></a></div>
+        </div>
+    </div>
+
+    <!-- 寺庙介绍 -->
+    <div class="video">
+      <ul class="video-toggle">
+        <li class="video-toggle-item"><a class="video-toggle-item-a video-toggle-item-a-active">寺庙相关</a></li><li class="video-toggle-item"><a class="video-toggle-item-a">佛教视频</a></li>
+      </ul>
+      <ul class="video-list video-about">
+        <li class="video-item">
+          <a class="video-item-img">
+            <img src="images/qifu.png" />
+          </a>
+          <div class="video-item-info">
+            <h4><a href="">拜佛为何要烧香</a></h4>
+            <p>讲述阿声大几岁的哈就算的话</p>
+            <div class="video-views">94人次</div>
+            <div class="video-details">详情</div>
+          </div>
+        </li>
+      </ul>
+      <ul class="video-list video-temple">
+        <li class="video-item">
+          <a class="video-item-img">
+            <img src="images/qifu.png" />
+          </a>
+          <div class="video-item-info">
+            <h4><a href="">fsdfsdf</a></h4>
+            <p>讲述阿声大几岁的哈cxvxcv就算的话</p>
+            <div class="video-views">3.44万人次</div>
+            <div class="video-details">详情</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 寺庙文章 -->
+    <!-- <div class="temple-article">
+        <div class="temple-article-list clearfix">
+            <div class="left">
+                <a href=""><img src="images/img1.jpg" alt=""></a>
+            </div>
+            <div class="right">
+                <h4><a href="">拜佛为何要烧香</a></h4>
+                <p>烧香是佛教信众随缘而行的正常行为，早起。。。</p>
+                <div class="views">1941</div>
+            </div>
+        </div>
+        <div class="temple-article-list clearfix">
+            <div class="left">
+                <a href=""><img src="images/img2.jpg" alt=""></a>
+            </div>
+            <div class="right">
+                <h4><a href="">拜佛为何要烧香</a></h4>
+                <p>烧香是佛教信众随缘而行的正常行为，早起。。。</p>
+                <div class="views">1941</div>
+            </div>
+        </div>
+        <div class="temple-article-list clearfix">
+            <div class="left">
+                <a href=""><img src="images/img1.jpg" alt=""></a>
+            </div>
+            <div class="right">
+                <h4><a href="">拜佛为何要烧香</a></h4>
+                <p>烧香是佛教信众随缘而行的正常行为，早起。。。</p>
+                <div class="views">1941</div>
+            </div>
+        </div>
+        <div class="temple-article-list clearfix">
+            <div class="left">
+                <a href=""><img src="images/img2.jpg" alt=""></a>
+            </div>
+            <div class="right">
+                <h4><a href="">拜佛为何要烧香</a></h4>
+                <p>烧香是佛教信众随缘而行的正常行为，早起。。。</p>
+                <div class="views">1941</div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- 底部导航 -->
+    <div class="foot-nav clearfix footer-nav">
+        <a href="" class="active">
+            <div class="iconfont">&#xe604;</div>
+            首页
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe70b;</div>
+            活动
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe619;</div>
+            同修圈
+        </a>
+        <a href="" class="">
+            <div class="iconfont">&#xe66d;</div>
+            我的
+        </a>
+    </div>
+
+    <!-- jQuery文件 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- banner文件 -->
+    <script src="js/banner.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        jQuery(function($) {
+            $("#owl-banner").owlCarousel({
+                singleItem: true,
+                paginationNumbers: false,
+                autoPlay: 6000,
+                navigation: true,
+                navigationText: ["",""],
+            });
+        });
+    </script>
+    <script src="js/video.js"></script>
+</body>
+</html>

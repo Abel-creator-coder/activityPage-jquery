@@ -1,0 +1,291 @@
+@import url('common/reset.css');
+body {
+    background-image: url('../images/back.png');
+    background-size: cover;
+}
+
+.scroll {
+    background-color: rgb(76, 33, 21);
+    height: 0.9rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.scroll img {
+    height: 0.36rem;
+    width: 0.42rem;
+    position: absolute;
+    left: 0.3rem;
+    top: 0.26rem;
+}
+
+.scroll > div {
+    height: 0.5rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    margin-top: 0.3rem;
+}
+
+.scroll span {
+    font-size: 0.26rem;
+    color: rgb(248, 218, 49);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 93%;
+}
+
+.rebateLogo {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    margin-top: 0.55rem;
+}
+
+.rebateLogo img {
+    width: 100%;
+}
+
+.result {
+    height: 1.84rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    background: transparent;
+    color: rgb(248, 219, 50);
+    background-color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.result p:first-child {
+    font-size: 0.53rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.22rem;
+    display: inline-block;
+    line-height: 1;
+}
+
+.result p:last-child {
+    font-size: 0.24rem;
+    border: 2px solid rgb(248, 219, 50);
+    width: 4.95rem;
+    border-radius: 10px;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 700;
+    height: 0.5rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.13rem;
+    line-height: 0.24rem;
+}
+
+.result p span {
+    color: rgb(255, 76, 125);
+}
+
+.result + p {
+    color: rgb(248, 219, 50);
+    text-align: center;
+    font-size: 0.24rem;
+    margin-top: 0.22rem;
+    margin-bottom: 0.6rem;
+}
+
+.chargeTitle {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.chargeTitle img {
+    width: 100%;
+}
+
+.chargeType {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    overflow: hidden;
+}
+
+.chargeType li {
+    float: left;
+    width: 49%;
+    font-size: 0;
+    margin-bottom: 0.2rem;
+}
+
+.chargeType li:nth-child(odd) {
+    margin-right: 2%;
+}
+
+.chargeType li span {
+    color: rgb(255, 67, 67);
+    display: inline-block;
+    width: 100%;
+    height: 0.65rem;
+    background-color: #fff;
+    font-size: 0.28rem;
+    text-align: center;
+    line-height: 0.65rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chargeType li img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.contractUs {
+    height: 1.80rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.35);
+    text-align: left;
+    padding-top: 0.4rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.24rem;
+    line-height: 0.33rem;
+}
+
+.contractUs a {
+    color: rgb(248, 219, 50);
+    text-decoration: underline;
+}
+
+.tools {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    margin-top: 0.63rem;
+}
+
+.tools img {
+    width: 100%;
+}
+
+.tools + div {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.tools + div img {
+    width: 100%;
+}
+
+.descContent {
+    height: 3.2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.35);
+    text-align: left;
+    padding-top: 0.4rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+.descContent p a {
+    color: rgb(248, 219, 50);
+    text-decoration: underline;
+}
+
+.descContent p {
+    margin-bottom: 0.4rem;
+}
+
+.descContent p:last-child {
+    margin-bottom: 0;
+}
+
+.subWrap {
+    position: fixed;
+    bottom: 0;
+    height: 1.3rem;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.2rem;
+}
+
+.hh {
+    width: 100%;
+    height: 1.7rem;
+}
+
+.h_9 {
+    width: 100%;
+    height: 0.9rem;
+}
+
+.subWrap img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.layer {
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.finishToast {
+    position: fixed;
+    top: 50%;
+    left: 7%;
+    width: 86%;
+    background-color: #fff;
+    height: 3.3rem;
+    margin-top: -1.65rem;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+
+.finishToast img {
+    width: 0.28rem;
+    float: right;
+    margin-top: 0.26rem;
+    margin-right: 0.26rem;
+}
+
+.finishToast h2 {
+    margin-top: 0.6rem;
+    font-size: 0.36rem;
+    margin-bottom: 0.5rem;
+    line-height: 0.36rem;
+    color: #000;
+}
+
+.finishToast p {
+    COLOR: rgb(121, 121, 121);
+    font-size: 0.28rem;
+    line-height: 0.35rem;
+    width: 70%;
+    margin-left: 15%;
+    height: 1rem;
+}
+
+.finishToast span {
+    font-size: 0.32rem;
+    color: rgb(83, 202, 195);
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid rgb(220, 220, 220);
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}

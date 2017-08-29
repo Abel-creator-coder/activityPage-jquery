@@ -6,7 +6,9 @@ var server2 = require('browser-sync').create("server2");
 var test = require('browser-sync').create("test");
 var proxy = require('browser-sync').create("proxy");
 var snippet = require('browser-sync').create("snippet");
-var server1Url = "D:/techwolf-fe/GruntProjects/boss-v2.0/src/html/special";
+// var server1Url = "D:/techwolf-fe/GruntProjects/boss-v3.0/";
+var server1Url = "D:/techwolf-fe/GruntProjects/boss-v2.0/src/html/special/";
+// var server1Url = "D:/techwolf-fe/GruntProjects/boss-v2.0";
 var server2Url = "D:/test";
 var testUrl = "./app";
 gulp.task('start', function() {

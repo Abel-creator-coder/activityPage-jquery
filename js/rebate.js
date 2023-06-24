@@ -1,10 +1,10 @@
 var rebate = (function($, win) {
     this.activityOver = win._PAGE.activityStatus;
     this.activityOverAlert = function() {
-        $('.finishToast p').text('充值返利活动已结束，请到Boss直聘app充值');
+        $('.finishToast p').text('充值返利活动已结束，请到app充值');
     };
     this.roleErrAlert = function() {
-        $('.finishToast p').text('该活动仅限Boss身份充值，牛人身份暂无充值返利活动');
+        $('.finishToast p').text('该活动仅限xxx充值，牛人身份暂无充值返利活动');
     };
     this.alert = function(type) {
         type();
